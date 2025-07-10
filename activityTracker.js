@@ -1,3 +1,5 @@
+// https://github.com/shahaby/cs81-module5b-weektracker/
+
 // 1. Create Your Weekly Data
 const myWeek = [
     { day: "Monday", activity: "Jogging", category: "physical", hoursSpent: 1, enjoyment: 8, timeOfDay: "morning" },
