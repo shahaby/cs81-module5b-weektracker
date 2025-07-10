@@ -15,14 +15,13 @@ const myWeek = [
 // Patterns: more activities in the afternoon
 
 // 3. Write Analysis Functions
-
-// Calculate total hours spent on physical activity
+// Calculates total hours spent on physical activity
 const totalPhysicalHours = myWeek
     .filter(activity => activity.category === "physical")
     .reduce((total, activity) => total + activity.hoursSpent, 0);
 console.log("Total hours spent on physical activities:", totalPhysicalHours);
 
-// Calculate average enjoyment by time of day
+// Calculates average enjoyment by time of day
 const averageEnjoymentByTime = (time) => {
     const filteredActivities = myWeek.filter(activity => activity.timeOfDay === time);
     const totalEnjoyment = filteredActivities.reduce((total, activity) => total + activity.enjoyment, 0);
@@ -32,3 +31,12 @@ console.log("Average enjoyment in the morning:", averageEnjoymentByTime("morning
 console.log("Average enjoyment in the afternoon:", averageEnjoymentByTime("afternoon").toFixed(1));
 console.log("Average enjoyment in the evening:", averageEnjoymentByTime("evening").toFixed(1));
 
+
+
+// 4. Create a Custom Higher-Order Function
+function filterByCondition(testFn) {
+    return myWeek.filter(testFn);
+}
+// Example usage of higher-order func
+const lowHoursHighEnjoymentActs = filterByCondition(act => act.hoursSpent <= 1 && act.enjoyment >= 8);
+console.log("Filtered activities (low hours, high enjoyment):", lowHoursHighEnjoymentActs);
