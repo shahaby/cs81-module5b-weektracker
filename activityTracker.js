@@ -1,4 +1,4 @@
-// Array of weekly activities
+// 1. Create Your Weekly Data
 const myWeek = [
     { day: "Monday", activity: "Jogging", category: "physical", hoursSpent: 1, enjoyment: 8, timeOfDay: "morning" },
     { day: "Tuesday", activity: "Painting", category: "creative", hoursSpent: 2, enjoyment: 9, timeOfDay: "afternoon" },
@@ -9,3 +9,7 @@ const myWeek = [
     { day: "Sunday", activity: "Cooking", category: "creative", hoursSpent: 2, enjoyment: 8, timeOfDay: "afternoon" },
 ];
 
+// 2. Make Predictions
+// Highest enjoyment: socializing
+// Dominant category: physical
+// Patterns: more activities in the afternoon
