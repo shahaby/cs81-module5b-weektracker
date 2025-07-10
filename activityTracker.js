@@ -13,3 +13,22 @@ const myWeek = [
 // Highest enjoyment: socializing
 // Dominant category: physical
 // Patterns: more activities in the afternoon
+
+// 3. Write Analysis Functions
+
+// Calculate total hours spent on physical activity
+const totalPhysicalHours = myWeek
+    .filter(activity => activity.category === "physical")
+    .reduce((total, activity) => total + activity.hoursSpent, 0);
+console.log("Total hours spent on physical activities:", totalPhysicalHours);
+
+// Calculate average enjoyment by time of day
+const averageEnjoymentByTime = (time) => {
+    const filteredActivities = myWeek.filter(activity => activity.timeOfDay === time);
+    const totalEnjoyment = filteredActivities.reduce((total, activity) => total + activity.enjoyment, 0);
+    return filteredActivities.length > 0 ? totalEnjoyment / filteredActivities.length : 0;
+};
+console.log("Average enjoyment in the morning:", averageEnjoymentByTime("morning").toFixed(1));
+console.log("Average enjoyment in the afternoon:", averageEnjoymentByTime("afternoon").toFixed(1));
+console.log("Average enjoyment in the evening:", averageEnjoymentByTime("evening").toFixed(1));
+
